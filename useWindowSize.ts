@@ -1,6 +1,7 @@
+
 import { useEffect, useState } from "react";
-import WindowSizeService, { WindowSizeServiceEvent } from "../../../hg/ui/services/WindowSizeService";
-import LogService from "../../../hg/core/LogService";
+import { WindowSizeService,  WindowSizeServiceEvent } from "../services/WindowSizeService";
+import { LogService } from "../../core/LogService";
 
 const LOG = LogService.createLogger('useWindowSize');
 

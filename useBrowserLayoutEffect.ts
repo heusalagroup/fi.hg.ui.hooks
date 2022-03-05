@@ -10,4 +10,4 @@ export function useBrowserLayoutEffect () {
 
 }
 
-export default useBrowserLayoutEffect;
+
