@@ -1,6 +1,7 @@
+// Copyright (c) 2021-2022. Heusala Group Oy <info@heusalagroup.fi>. All rights reserved.
 
 import { useEffect, useState } from "react";
-import { WindowSizeService,  WindowSizeServiceEvent } from "../services/WindowSizeService";
+import { WindowSizeService, WindowSizeServiceEvent } from "../services/WindowSizeService";
 import { LogService } from "../../core/LogService";
 
 const LOG = LogService.createLogger('useWindowSize');
