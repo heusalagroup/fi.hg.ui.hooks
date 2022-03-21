@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { EmailTokenDTO } from "../../auth/email/types/EmailTokenDTO";
 import { EmailAuthSessionService } from "../services/EmailAuthSessionService";
 
-export interface SessionData {
+export interface EmailAuthSessionData {
 
     readonly token      : EmailTokenDTO | undefined;
     readonly email      : string | undefined;
@@ -12,11 +12,11 @@ export interface SessionData {
 
 }
 
-function createSessionData (
+function createEmailAuthSessionData (
     token      : EmailTokenDTO | undefined,
     email      : string | undefined,
     isLoggedIn : boolean
-) : SessionData {
+) : EmailAuthSessionData {
     return {
         token,
         email,
@@ -24,10 +24,10 @@ function createSessionData (
     };
 }
 
-export function useSession () : SessionData {
+export function useEmailAuthSession () : EmailAuthSessionData {
 
-    const [ sessionData, setSessionData ] = useState<SessionData>(
-        createSessionData(EmailAuthSessionService.getEmailToken(), EmailAuthSessionService.getEmailAddress(), EmailAuthSessionService.hasSession())
+    const [ sessionData, setSessionData ] = useState<EmailAuthSessionData>(
+        createEmailAuthSessionData(EmailAuthSessionService.getEmailToken(), EmailAuthSessionService.getEmailAddress(), EmailAuthSessionService.hasSession())
     );
 
     // When session service changes data
@@ -45,7 +45,7 @@ export function useSession () : SessionData {
                     sessionData.email !== email ||
                     sessionData.isLoggedIn !== isLoggedIn
                 ) {
-                    setSessionData(createSessionData(token, email, isLoggedIn));
+                    setSessionData(createEmailAuthSessionData(token, email, isLoggedIn));
                 }
 
             }
