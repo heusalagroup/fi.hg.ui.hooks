@@ -44,8 +44,7 @@ export function useScrollTop (
         [
             setScrollTop,
             scrollingElement,
-            onScroll,
-            window
+            onScroll
         ]
     );
 
