@@ -31,16 +31,21 @@ export function useScrollTop (
 
             setScrollTop(scrollingElement?.scrollTop);
 
-            window.addEventListener('scroll', onScroll);
+            if (typeof window !== 'undefined') {
+                window.addEventListener('scroll', onScroll);
+                return () => {
+                    window.removeEventListener('scroll', onScroll);
+                };
+            } else {
+                LOG.warn(`Could not detect window object. Cannot listen scroll events.`);
+            }
 
-            return () => {
-                window.removeEventListener('scroll', onScroll);
-            };
         },
         [
             setScrollTop,
             scrollingElement,
-            onScroll
+            onScroll,
+            window
         ]
     );
 
