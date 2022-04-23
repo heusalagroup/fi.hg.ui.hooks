@@ -1,7 +1,7 @@
 // Copyright (c) 2021-2022. Heusala Group Oy <info@heusalagroup.fi>. All rights reserved.
 
 import { useEffect, useState } from "react";
-import { EmailTokenDTO } from "../../auth/email/types/EmailTokenDTO";
+import { EmailTokenDTO } from "../../core/auth/email/types/EmailTokenDTO";
 import { EmailAuthSessionService } from "../services/EmailAuthSessionService";
 
 export interface EmailAuthSessionData {
