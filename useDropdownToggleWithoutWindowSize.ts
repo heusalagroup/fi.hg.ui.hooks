@@ -1,14 +1,13 @@
 // Copyright (c) 2021-2022. Heusala Group Oy <info@heusalagroup.fi>. All rights reserved.
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { useLocation } from "react-router-dom";
-//import { useWindowSize } from "./useWindowSize";
 import { LogService } from "../../core/LogService";
 import { useScrollTop } from "./useScrollTop";
 
 const LOG = LogService.createLogger('useDropdownToggle');
 
-export type SetProfileMenuOpenCallback = React.Dispatch<React.SetStateAction<boolean>>;
+export type SetProfileMenuOpenCallback = Dispatch<SetStateAction<boolean>>;
 
 export function useDropdownToggleWithoutWindowSize(initialState: boolean = false): [boolean, SetProfileMenuOpenCallback] {
 
