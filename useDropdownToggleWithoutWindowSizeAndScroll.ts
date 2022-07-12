@@ -3,7 +3,6 @@
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { useLocation } from "react-router-dom";
 import { LogService } from "../../core/LogService";
-//import { useScrollTop } from "./useScrollTop";
 
 const LOG = LogService.createLogger('useDropdownToggle');
 
@@ -14,20 +13,6 @@ export function useDropdownToggleWithoutWindowSizeAndScroll(initialState: boolea
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(initialState);
 
     const location = useLocation();
-    //const windowSize = useWindowSize();
-    // const scrollTop = useScrollTop(window?.document?.scrollingElement);
-
-    // When window size changes, close menu
-    /* useEffect(
-         () => {
-             LOG.debug('Closing dropdown menu since window size changed');
-             setDropdownOpen(false);
-         },
-         [
-             //    windowSize,
-             setDropdownOpen
-         ]
-     );*/
 
     // When location changes, close menu
     useEffect(
@@ -40,18 +25,6 @@ export function useDropdownToggleWithoutWindowSizeAndScroll(initialState: boolea
             setDropdownOpen
         ]
     );
-
-    // When scroll changes
-    /*useEffect(
-        () => {
-            LOG.debug('Closing dropdown menu since location changed');
-            setDropdownOpen(false);
-        },
-        [
-            scrollTop,
-            setDropdownOpen
-        ]
-    );*/
 
     return [isDropdownOpen, setDropdownOpen];
 
