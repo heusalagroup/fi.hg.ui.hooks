@@ -5,11 +5,9 @@ import { EmailTokenDTO } from "../../core/auth/email/types/EmailTokenDTO";
 import { EmailAuthSessionService } from "../services/EmailAuthSessionService";
 
 export interface EmailAuthSessionData {
-
     readonly token      : EmailTokenDTO | undefined;
     readonly email      : string | undefined;
     readonly isLoggedIn : boolean;
-
 }
 
 function createEmailAuthSessionData (
