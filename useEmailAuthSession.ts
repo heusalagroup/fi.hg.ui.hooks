@@ -25,7 +25,11 @@ function createEmailAuthSessionData (
 export function useEmailAuthSession () : EmailAuthSessionData {
 
     const [ sessionData, setSessionData ] = useState<EmailAuthSessionData>(
-        createEmailAuthSessionData(EmailAuthSessionService.getEmailToken(), EmailAuthSessionService.getEmailAddress(), EmailAuthSessionService.hasSession())
+        createEmailAuthSessionData(
+            EmailAuthSessionService.getEmailToken(),
+            EmailAuthSessionService.getEmailAddress(),
+            EmailAuthSessionService.hasSession()
+        )
     );
 
     // When session service changes data
